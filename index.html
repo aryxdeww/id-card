@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aryxdeww - Profile Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body {
+      background-color: #08080a;
+      color: #f3f4f6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    a, a:visited, a:hover, a:active {
+              color: #9279B3;
+              text-decoration: none;
+    }
+    .card-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .profile-card {
+      background-color: #0d0e12;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      width: 780px;
+      border-radius: 28px;
+      padding: 36px;
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    @media (max-width: 800px) { .profile-card { zoom: 0.85; } }
+    @media (max-width: 650px) { .profile-card { zoom: 0.68; } }
+    @media (max-width: 500px) { .profile-card { zoom: 0.52; } }
+    @media (max-width: 380px) { .profile-card { zoom: 0.44; } }
+
+    .card-left { flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
+    .card-name { font-weight: 900; color: #fff; text-transform: uppercase; line-height: 1.0; font-size: 4rem; white-space: nowrap; word-break: keep-all; }
+    .card-tagline { color: #9ca3af; font-size: 2.2rem; margin-top: 12px; line-height: 1.4; }
+    .divider { width: 100%; height: 3px; background-color: #a855f7; border-radius: 999px; margin-bottom: 16px; box-shadow: 0 0 12px #a855f7; }
+    .social-links { font-weight: 700; font-size: 0.875rem; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .card-right { width: 260px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; flex-shrink: 0; }
+    .img-box { width: 260px; height: 260px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+    .img-box img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .action-btn { width: 100%; padding: 14px; border-radius: 16px; background-color: #a855f7; font-weight: 900; color: #000; text-transform: uppercase; border: none; cursor: pointer; font-size: 0.75rem; letter-spacing: 0.05em; transition: 0.2s; }
+    .action-btn:hover { opacity: 0.9; }
+
+    /* Modal Styles */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100; }
+    .modal-card { background: #12131a; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 500px; border-radius: 20px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px; margin-bottom: 16px; }
+    .modal-user { display: flex; align-items: center; gap: 12px; }
+    .modal-user img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid #a855f7; }
+    .bio-box { background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; font-size: 0.875rem; color: #d1d5db; line-height: 1.6; white-space: pre-line; }
+    .close-btn { background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="card-wrapper">
+    <div class="profile-card">
+      <div class="card-left">
+        <div>
+          <h1 class="card-name">aryxdeww</h1>
+          <p class="card-tagline">Linux Enthusiast, Fictophile, Introvert, Asocial.</p>
+        </div>
+        <div style="margin-top: 24px;">
+          <div class="divider"></div>
+          <div class="social-links">
+            <a href="https://www.tiktok.com/@aryxdeww?_r=1&_t=ZS-99udHYxCfht" target="_blank" style="color: #a855f7; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">TikTok</a> <span style="color: #4b5563;">•</span> <a href="https://www.instagram.com/aryxdeww?utm_source=qr&stkn=dTh3enN0dHlubXBm" target="_blank" style="color: #a855f7; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Instagram</a> <span style="color: #4b5563;">•</span> <a href="https://youtube.com/@aryxdeww?si=Kfrx7IfgUK7kCp4w" target="_blank" style="color: #a855f7; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">YouTube</a> <span style="color: #4b5563;">•</span> <a href="https://github.com/aryxdeww" target="_blank" style="color: #a855f7; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-right">
+        <div class="img-box">
+          <img src="assets/arya-hardpose.png" alt="Profile">
+        </div>
+        <button class="action-btn" onclick="openBioModal()">BIO</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="bioModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-user">
+          <img src="assets/arya-hardpose.png">
+          <div>
+            <h3 style="color:#fff; font-size: 1rem; font-weight:700;">aryxdeww</h3>
+            <p style="color:#a855f7; font-size: 0.75rem;">Linux Enthusiast, Fictophile, Introvert, Asocial.</p>
+          </div>
+        </div>
+        <button class="close-btn" onclick="closeBioModal()">&times;</button>
+      </div>
+      <p style="font-size:0.75rem; color:#9ca3af; font-weight:700; text-transform:uppercase; margin-bottom:8px;">Bio</p>
+      <div class="bio-box">Arya Dewangga A.K.A Aryok/RexDeww/ARYXDEWW/ Rexon. 
+
+Aku antusias di bidang komputer terutama kalo lagi pada bahas Linux juga seorang <a href="https://www.halodoc.com/artikel/mengenal-fictophilia-tanda-tanda-dan-cara-efektif-mengatasinya?srsltid=AfmBOoolIpips6BTThBhJkeAjxuMRv7dHdUBNPdlUXEAsZhSoGJbJ175">fiktofilia</a>. Oh iya aku orangnya <a href"https://www.halodoc.com/artikel/introvert-ciri-kekuatan-dan-cara-hadapi-dunia">introvert</a>, dan <a href="https://www.halodoc.com/artikel/pahami-asocial-suka-menyendiri-bukan-antisosial">asosial</a> karena emang ga terbiasa di publik dan aku lebih senang di kamar mainan komputer, dan itu menjelaskan kenapa aku antusias di bidang komputer.</div>
+      <div style="margin-top: 20px; text-align: right;">
+        <button onclick="closeBioModal()" style="padding: 8px 16px; border-radius: 8px; background: rgba(255,255,255,0.1); color: #fff; border: none; cursor: pointer; font-size: 0.75rem;">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openBioModal() { document.getElementById('bioModal').style.display = 'flex'; }
+    function closeBioModal() { document.getElementById('bioModal').style.display = 'none'; }
+  </script>
+</body>
+</html>
